@@ -8,6 +8,12 @@
 
 #import "RWTLevel.h"
 
+@interface RWTLevel ()
+
+@property (strong, nonatomic) NSSet *possibleSwaps;
+
+@end
+
 @implementation RWTLevel {
     RWTCookie *_cookies[NumColumns][NumRows];
     RWTTile *_tiles[NumColumns][NumRows];
@@ -21,7 +27,17 @@
 }
 
 - (NSSet *)shuffle {
-    return [self createInitialCookies];
+    NSSet *set;
+    do {
+        set = [self createInitialCookies];
+        
+        [self detectPossibleSwaps];
+        
+        NSLog(@"possible swaps: %@", self.possibleSwaps);
+    }
+    while ([self.possibleSwaps count] == 0);
+    
+    return set;
 }
 
 - (NSSet *)createInitialCookies {
@@ -133,6 +149,82 @@
     _cookies[columnB][rowB] = swap.cookieA;
     swap.cookieA.column = columnB;
     swap.cookieA.row = rowB;
+}
+
+- (BOOL)hasChainAtColumn:(NSInteger)column row:(NSInteger)row {
+    NSUInteger cookieType = _cookies[column][row].cookieType;
+    
+    NSUInteger horzLength = 1;
+    for (NSInteger i = column - 1; i >= 0 && _cookies[i][row].cookieType == cookieType; i--, horzLength++) ;
+    for (NSInteger i = column + 1; i < NumColumns && _cookies[i][row].cookieType == cookieType; i++, horzLength++) ;
+    if (horzLength >= 3) return YES;
+    
+    NSUInteger vertLength = 1;
+    for (NSInteger i = row - 1; i >= 0 && _cookies[column][i].cookieType == cookieType; i--, vertLength++) ;
+    for (NSInteger i = row + 1; i < NumRows && _cookies[column][i].cookieType == cookieType; i++, vertLength++) ;
+    return (vertLength >= 3);
+}
+
+- (void)detectPossibleSwaps {
+    NSMutableSet *set = [NSMutableSet set];
+    
+    for (NSInteger row = 0; row < NumRows; row++) {
+        for (NSInteger column = 0; column < NumColumns; column++) {
+            
+            RWTCookie *cookie = _cookies[column][row];
+            if (cookie != nil) {
+                
+                // Is it possible to swap this cookie with the one on the right?
+                if (column < NumColumns - 1) {
+                    // Have a cookie in this spot? If there is no tile, there is no cookie.
+                    RWTCookie *other = _cookies[column + 1][row];
+                    if (other != nil) {
+                        // Swap them
+                        _cookies[column][row] = other;
+                        _cookies[column + 1][row] = cookie;
+                        
+                        // Is either cookie now part of a chain?
+                        if ([self hasChainAtColumn:column + 1 row:row] ||
+                            [self hasChainAtColumn:column row:row]) {
+                            
+                            RWTSwap *swap = [[RWTSwap alloc] init];
+                            swap.cookieA = cookie;
+                            swap.cookieB = other;
+                            [set addObject:swap];
+                        }
+                        
+                        // Swap them back
+                        _cookies[column][row] = cookie;
+                        _cookies[column + 1][row] = other;
+                    }
+                }
+                
+                if (row < NumRows - 1) {
+                    
+                    RWTCookie *other = _cookies[column][row + 1];
+                    if (other != nil) {
+                        // Swap them
+                        _cookies[column][row] = other;
+                        _cookies[column][row + 1] = cookie;
+                        
+                        if ([self hasChainAtColumn:column row:row + 1] ||
+                            [self hasChainAtColumn:column row:row]) {
+                            
+                            RWTSwap *swap = [[RWTSwap alloc] init];
+                            swap.cookieA = cookie;
+                            swap.cookieB = other;
+                            [set addObject:swap];
+                        }
+                        
+                        _cookies[column][row] = cookie;
+                        _cookies[column][row + 1] = other;
+                    }
+                }
+            }
+        }
+    }
+    
+    self.possibleSwaps = set;
 }
 
 @end
