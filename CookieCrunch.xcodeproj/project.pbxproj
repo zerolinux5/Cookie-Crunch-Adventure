@@ -17,13 +17,13 @@
 		EAAEF6B41969C3F9007DE2F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF6B21969C3F9007DE2F2 /* Main.storyboard */; };
 		EAAEF6B71969C3F9007DE2F2 /* RWTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF6B61969C3F9007DE2F2 /* RWTViewController.m */; };
 		EAAEF6BA1969C3F9007DE2F2 /* RWTMyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF6B91969C3F9007DE2F2 /* RWTMyScene.m */; };
-		EAAEF6BC1969C3F9007DE2F2 /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF6BB1969C3F9007DE2F2 /* Spaceship.png */; };
 		EAAEF6BE1969C3F9007DE2F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF6BD1969C3F9007DE2F2 /* Images.xcassets */; };
 		EAAEF6C51969C3FA007DE2F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAEF6C41969C3FA007DE2F2 /* XCTest.framework */; };
 		EAAEF6C61969C3FA007DE2F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAEF69E1969C3F9007DE2F2 /* Foundation.framework */; };
 		EAAEF6C71969C3FA007DE2F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAAEF6A21969C3F9007DE2F2 /* UIKit.framework */; };
 		EAAEF6CF1969C3FA007DE2F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF6CD1969C3FA007DE2F2 /* InfoPlist.strings */; };
 		EAAEF6D11969C3FA007DE2F2 /* CookieCrunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF6D01969C3FA007DE2F2 /* CookieCrunchTests.m */; };
+		EAAEF701196B012E007DE2F2 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF700196B012E007DE2F2 /* Sprites.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,13 +53,13 @@
 		EAAEF6B61969C3F9007DE2F2 /* RWTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTViewController.m; sourceTree = "<group>"; };
 		EAAEF6B81969C3F9007DE2F2 /* RWTMyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWTMyScene.h; sourceTree = "<group>"; };
 		EAAEF6B91969C3F9007DE2F2 /* RWTMyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWTMyScene.m; sourceTree = "<group>"; };
-		EAAEF6BB1969C3F9007DE2F2 /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		EAAEF6BD1969C3F9007DE2F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EAAEF6C31969C3FA007DE2F2 /* CookieCrunchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CookieCrunchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAAEF6C41969C3FA007DE2F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		EAAEF6CC1969C3FA007DE2F2 /* CookieCrunchTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CookieCrunchTests-Info.plist"; sourceTree = "<group>"; };
 		EAAEF6CE1969C3FA007DE2F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAAEF6D01969C3FA007DE2F2 /* CookieCrunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieCrunchTests.m; sourceTree = "<group>"; };
+		EAAEF700196B012E007DE2F2 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +121,7 @@
 		EAAEF6A61969C3F9007DE2F2 /* CookieCrunch */ = {
 			isa = PBXGroup;
 			children = (
+				EAAEF700196B012E007DE2F2 /* Sprites.atlas */,
 				EAAEF6AF1969C3F9007DE2F2 /* RWTAppDelegate.h */,
 				EAAEF6B01969C3F9007DE2F2 /* RWTAppDelegate.m */,
 				EAAEF6B21969C3F9007DE2F2 /* Main.storyboard */,
@@ -128,7 +129,6 @@
 				EAAEF6B61969C3F9007DE2F2 /* RWTViewController.m */,
 				EAAEF6B81969C3F9007DE2F2 /* RWTMyScene.h */,
 				EAAEF6B91969C3F9007DE2F2 /* RWTMyScene.m */,
-				EAAEF6BB1969C3F9007DE2F2 /* Spaceship.png */,
 				EAAEF6BD1969C3F9007DE2F2 /* Images.xcassets */,
 				EAAEF6A71969C3F9007DE2F2 /* Supporting Files */,
 			);
@@ -243,7 +243,7 @@
 			files = (
 				EAAEF6AB1969C3F9007DE2F2 /* InfoPlist.strings in Resources */,
 				EAAEF6BE1969C3F9007DE2F2 /* Images.xcassets in Resources */,
-				EAAEF6BC1969C3F9007DE2F2 /* Spaceship.png in Resources */,
+				EAAEF701196B012E007DE2F2 /* Sprites.atlas in Resources */,
 				EAAEF6B41969C3F9007DE2F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
