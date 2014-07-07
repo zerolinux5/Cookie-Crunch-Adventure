@@ -32,6 +32,7 @@
 		EAAEF711196B05DF007DE2F2 /* Level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF70C196B05DF007DE2F2 /* Level_3.json */; };
 		EAAEF712196B05DF007DE2F2 /* Level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF70D196B05DF007DE2F2 /* Level_4.json */; };
 		EAAEF715196B05FE007DE2F2 /* RWTTile.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF714196B05FE007DE2F2 /* RWTTile.m */; };
+		EAAEF718196B0CF5007DE2F2 /* RWTSwap.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF717196B0CF5007DE2F2 /* RWTSwap.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		EAAEF70D196B05DF007DE2F2 /* Level_4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Level_4.json; sourceTree = "<group>"; };
 		EAAEF713196B05FE007DE2F2 /* RWTTile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTTile.h; sourceTree = "<group>"; };
 		EAAEF714196B05FE007DE2F2 /* RWTTile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTTile.m; sourceTree = "<group>"; };
+		EAAEF716196B0CF5007DE2F2 /* RWTSwap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTSwap.h; sourceTree = "<group>"; };
+		EAAEF717196B0CF5007DE2F2 /* RWTSwap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTSwap.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				EAAEF706196B03B5007DE2F2 /* RWTLevel.m */,
 				EAAEF713196B05FE007DE2F2 /* RWTTile.h */,
 				EAAEF714196B05FE007DE2F2 /* RWTTile.m */,
+				EAAEF716196B0CF5007DE2F2 /* RWTSwap.h */,
+				EAAEF717196B0CF5007DE2F2 /* RWTSwap.m */,
 			);
 			path = CookieCrunch;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				EAAEF6BA1969C3F9007DE2F2 /* RWTMyScene.m in Sources */,
 				EAAEF6B71969C3F9007DE2F2 /* RWTViewController.m in Sources */,
 				EAAEF6B11969C3F9007DE2F2 /* RWTAppDelegate.m in Sources */,
+				EAAEF718196B0CF5007DE2F2 /* RWTSwap.m in Sources */,
 				EAAEF715196B05FE007DE2F2 /* RWTTile.m in Sources */,
 				EAAEF704196B02C5007DE2F2 /* RWTCookie.m in Sources */,
 				EAAEF6AD1969C3F9007DE2F2 /* main.m in Sources */,
