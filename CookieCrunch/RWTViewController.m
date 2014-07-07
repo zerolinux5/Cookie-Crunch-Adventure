@@ -33,6 +33,7 @@
     // Load the level.
     self.level = [[RWTLevel alloc] initWithFile:@"Level_1"];
     self.scene.level = self.level;
+    [self.scene addTiles];
     
     // Present the scene.
     [skView presentScene:self.scene];

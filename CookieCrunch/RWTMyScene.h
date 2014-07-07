@@ -16,4 +16,6 @@
 
 - (void)addSpritesForCookies:(NSSet *)cookies;
 
+- (void)addTiles;
+
 @end
