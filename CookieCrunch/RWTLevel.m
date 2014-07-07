@@ -227,4 +227,8 @@
     self.possibleSwaps = set;
 }
 
+- (BOOL)isPossibleSwap:(RWTSwap *)swap {
+    return [self.possibleSwaps containsObject:swap];
+}
+
 @end
