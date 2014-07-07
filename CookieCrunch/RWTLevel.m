@@ -33,7 +33,17 @@
             
             if (_tiles[column][row] != nil) {
                 // 2
-                NSUInteger cookieType = arc4random_uniform(NumCookieTypes) + 1;
+                NSUInteger cookieType;
+                do {
+                    cookieType = arc4random_uniform(NumCookieTypes) + 1;
+                }
+                while ((column >= 2 &&
+                        _cookies[column - 1][row].cookieType == cookieType &&
+                        _cookies[column - 2][row].cookieType == cookieType)
+                       ||
+                       (row >= 2 &&
+                        _cookies[column][row - 1].cookieType == cookieType &&
+                        _cookies[column][row - 2].cookieType == cookieType));
             
                 // 3
                 RWTCookie *cookie = [self createCookieAtColumn:column row:row withType:cookieType];
