@@ -8,24 +8,37 @@
 
 #import "RWTViewController.h"
 #import "RWTMyScene.h"
+#import "RWTLevel.h"
+
+@interface RWTViewController ()
+
+@property (strong, nonatomic) RWTLevel *level;
+@property (strong, nonatomic) RWTMyScene *scene;
+
+@end
 
 @implementation RWTViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     // Configure the view.
-    SKView * skView = (SKView *)self.view;
-    skView.showsFPS = YES;
-    skView.showsNodeCount = YES;
+    SKView *skView = (SKView *)self.view;
+    skView.multipleTouchEnabled = NO;
     
     // Create and configure the scene.
-    SKScene * scene = [RWTMyScene sceneWithSize:skView.bounds.size];
-    scene.scaleMode = SKSceneScaleModeAspectFill;
+    self.scene = [RWTMyScene sceneWithSize:skView.bounds.size];
+    self.scene.scaleMode = SKSceneScaleModeAspectFill;
+    
+    // Load the level.
+    self.level = [[RWTLevel alloc] init];
+    self.scene.level = self.level;
     
     // Present the scene.
-    [skView presentScene:scene];
+    [skView presentScene:self.scene];
+    
+    // Let's start the game!
+    [self beginGame];
 }
 
 - (BOOL)shouldAutorotate
@@ -50,6 +63,15 @@
 
 - (BOOL)prefersStatusBarHidden {
     return YES;
+}
+
+- (void)beginGame {
+    [self shuffle];
+}
+
+- (void)shuffle {
+    NSSet *newCookies = [self.level shuffle];
+    [self.scene addSpritesForCookies:newCookies];
 }
 
 @end

@@ -24,6 +24,8 @@
 		EAAEF6CF1969C3FA007DE2F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF6CD1969C3FA007DE2F2 /* InfoPlist.strings */; };
 		EAAEF6D11969C3FA007DE2F2 /* CookieCrunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF6D01969C3FA007DE2F2 /* CookieCrunchTests.m */; };
 		EAAEF701196B012E007DE2F2 /* Sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF700196B012E007DE2F2 /* Sprites.atlas */; };
+		EAAEF704196B02C5007DE2F2 /* RWTCookie.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF703196B02C5007DE2F2 /* RWTCookie.m */; };
+		EAAEF707196B03B5007DE2F2 /* RWTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF706196B03B5007DE2F2 /* RWTLevel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,10 @@
 		EAAEF6CE1969C3FA007DE2F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		EAAEF6D01969C3FA007DE2F2 /* CookieCrunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CookieCrunchTests.m; sourceTree = "<group>"; };
 		EAAEF700196B012E007DE2F2 /* Sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Sprites.atlas; sourceTree = "<group>"; };
+		EAAEF702196B02C5007DE2F2 /* RWTCookie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTCookie.h; sourceTree = "<group>"; };
+		EAAEF703196B02C5007DE2F2 /* RWTCookie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTCookie.m; sourceTree = "<group>"; };
+		EAAEF705196B03B5007DE2F2 /* RWTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTLevel.h; sourceTree = "<group>"; };
+		EAAEF706196B03B5007DE2F2 /* RWTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTLevel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,10 @@
 				EAAEF6B91969C3F9007DE2F2 /* RWTMyScene.m */,
 				EAAEF6BD1969C3F9007DE2F2 /* Images.xcassets */,
 				EAAEF6A71969C3F9007DE2F2 /* Supporting Files */,
+				EAAEF702196B02C5007DE2F2 /* RWTCookie.h */,
+				EAAEF703196B02C5007DE2F2 /* RWTCookie.m */,
+				EAAEF705196B03B5007DE2F2 /* RWTLevel.h */,
+				EAAEF706196B03B5007DE2F2 /* RWTLevel.m */,
 			);
 			path = CookieCrunch;
 			sourceTree = "<group>";
@@ -263,9 +273,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAAEF707196B03B5007DE2F2 /* RWTLevel.m in Sources */,
 				EAAEF6BA1969C3F9007DE2F2 /* RWTMyScene.m in Sources */,
 				EAAEF6B71969C3F9007DE2F2 /* RWTViewController.m in Sources */,
 				EAAEF6B11969C3F9007DE2F2 /* RWTAppDelegate.m in Sources */,
+				EAAEF704196B02C5007DE2F2 /* RWTCookie.m in Sources */,
 				EAAEF6AD1969C3F9007DE2F2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
