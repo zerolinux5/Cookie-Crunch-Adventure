@@ -39,4 +39,6 @@ static const NSInteger NumRows = 9;
 
 - (void)detectPossibleSwaps;
 
+- (void)resetComboMultiplier;
+
 @end

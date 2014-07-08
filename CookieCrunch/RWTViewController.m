@@ -94,6 +94,7 @@
     self.movesLeft = self.level.maximumMoves;
     self.score = 0;
     [self updateLabels];
+    [self.level resetComboMultiplier];
     [self shuffle];
 }
 
@@ -126,6 +127,7 @@
 }
 
 - (void)beginNextTurn {
+    [self.level resetComboMultiplier];
     [self.level detectPossibleSwaps];
     self.view.userInteractionEnabled = YES;
 }
