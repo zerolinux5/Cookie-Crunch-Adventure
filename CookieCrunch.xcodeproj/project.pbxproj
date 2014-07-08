@@ -39,6 +39,7 @@
 		EAAEF723196B1341007DE2F2 /* Ka-Ching.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF71D196B1341007DE2F2 /* Ka-Ching.wav */; };
 		EAAEF724196B1341007DE2F2 /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF71E196B1341007DE2F2 /* Mining by Moonlight.mp3 */; };
 		EAAEF725196B1341007DE2F2 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF71F196B1341007DE2F2 /* Scrape.wav */; };
+		EAAEF728196CA13B007DE2F2 /* RWTChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF727196CA13B007DE2F2 /* RWTChain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,8 @@
 		EAAEF71D196B1341007DE2F2 /* Ka-Ching.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "Ka-Ching.wav"; sourceTree = "<group>"; };
 		EAAEF71E196B1341007DE2F2 /* Mining by Moonlight.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Mining by Moonlight.mp3"; sourceTree = "<group>"; };
 		EAAEF71F196B1341007DE2F2 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
+		EAAEF726196CA13B007DE2F2 /* RWTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTChain.h; sourceTree = "<group>"; };
+		EAAEF727196CA13B007DE2F2 /* RWTChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTChain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +178,8 @@
 				EAAEF714196B05FE007DE2F2 /* RWTTile.m */,
 				EAAEF716196B0CF5007DE2F2 /* RWTSwap.h */,
 				EAAEF717196B0CF5007DE2F2 /* RWTSwap.m */,
+				EAAEF726196CA13B007DE2F2 /* RWTChain.h */,
+				EAAEF727196CA13B007DE2F2 /* RWTChain.m */,
 			);
 			path = CookieCrunch;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 				EAAEF6B71969C3F9007DE2F2 /* RWTViewController.m in Sources */,
 				EAAEF6B11969C3F9007DE2F2 /* RWTAppDelegate.m in Sources */,
 				EAAEF718196B0CF5007DE2F2 /* RWTSwap.m in Sources */,
+				EAAEF728196CA13B007DE2F2 /* RWTChain.m in Sources */,
 				EAAEF715196B05FE007DE2F2 /* RWTTile.m in Sources */,
 				EAAEF704196B02C5007DE2F2 /* RWTCookie.m in Sources */,
 				EAAEF6AD1969C3F9007DE2F2 /* main.m in Sources */,
