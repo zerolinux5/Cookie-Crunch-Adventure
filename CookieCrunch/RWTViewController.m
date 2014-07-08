@@ -94,7 +94,11 @@
 
 - (void)handleMatches {
     NSSet *chains = [self.level removeMatches];
-    // TODO: do something with the set
+    
+    [self.scene animateMatchedCookies:chains completion:^{
+        self.view.userInteractionEnabled = YES;
+    }];
 }
+
 
 @end

@@ -300,10 +300,18 @@
     NSSet *horizontalChains = [self detectHorizontalMatches];
     NSSet *verticalChains = [self detectVerticalMatches];
     
-    NSLog(@"Horizontal matches: %@", horizontalChains);
-    NSLog(@"Vertical matches: %@", verticalChains);
+    [self removeCookies:horizontalChains];
+    [self removeCookies:verticalChains];
     
     return [horizontalChains setByAddingObjectsFromSet:verticalChains];
+}
+
+- (void)removeCookies:(NSSet *)chains {
+    for (RWTChain *chain in chains) {
+        for (RWTCookie *cookie in chain.cookies) {
+            _cookies[cookie.column][cookie.row] = nil;
+        }
+    }
 }
 
 @end

@@ -26,4 +26,6 @@
 
 - (void)animateInvalidSwap:(RWTSwap *)swap completion:(dispatch_block_t)completion;
 
+- (void)animateMatchedCookies:(NSSet *)chains completion:(dispatch_block_t)completion;
+
 @end
