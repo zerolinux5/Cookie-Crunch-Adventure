@@ -97,7 +97,10 @@
     [self.scene animateMatchedCookies:chains completion:^{
         NSArray *columns = [self.level fillHoles];
         [self.scene animateFallingCookies:columns completion:^{
-            self.view.userInteractionEnabled = YES;
+            NSArray *columns = [self.level topUpCookies];
+            [self.scene animateNewCookies:columns completion:^{
+                self.view.userInteractionEnabled = YES;
+            }];
         }];
     }];
 }

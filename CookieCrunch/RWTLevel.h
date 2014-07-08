@@ -31,4 +31,6 @@ static const NSInteger NumRows = 9;
 
 - (NSArray *)fillHoles;
 
+- (NSArray *)topUpCookies;
+
 @end
