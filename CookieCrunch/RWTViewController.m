@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *movesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
+@property (weak, nonatomic) IBOutlet UIButton *shuffleButton;
+
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
@@ -158,6 +160,7 @@
 }
 
 - (void)showGameOver {
+    self.shuffleButton.hidden = YES;
     [self.scene animateGameOver];
     self.gameOverPanel.hidden = NO;
     self.scene.userInteractionEnabled = NO;
@@ -167,6 +170,7 @@
 }
 
 - (void)hideGameOver {
+    self.shuffleButton.hidden = NO;
     [self.view removeGestureRecognizer:self.tapGestureRecognizer];
     self.tapGestureRecognizer = nil;
     
@@ -174,6 +178,11 @@
     self.scene.userInteractionEnabled = YES;
     
     [self beginGame];
+}
+
+- (IBAction)shuffleButtonPressed:(id)sender {
+    [self shuffle];
+    [self decrementMoves];
 }
 
 @end

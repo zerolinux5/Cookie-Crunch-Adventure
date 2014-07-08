@@ -72,6 +72,16 @@ static const CGFloat TileHeight = 36.0;
         sprite.position = [self pointForColumn:cookie.column row:cookie.row];
         [self.cookiesLayer addChild:sprite];
         cookie.sprite = sprite;
+        
+        cookie.sprite.alpha = 0;
+        cookie.sprite.xScale = cookie.sprite.yScale = 0.5;
+        
+        [cookie.sprite runAction:[SKAction sequence:@[
+                                                      [SKAction waitForDuration:0.25 withRange:0.5],
+                                                      [SKAction group:@[
+                                                                        [SKAction fadeInWithDuration:0.25],
+                                                                        [SKAction scaleTo:1.0 duration:0.25]
+                                                                        ]]]]];
     }
 }
 
