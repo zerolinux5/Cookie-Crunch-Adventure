@@ -99,10 +99,12 @@
     self.score = 0;
     [self updateLabels];
     [self.level resetComboMultiplier];
+    [self.scene animateBeginGame];
     [self shuffle];
 }
 
 - (void)shuffle {
+    [self.scene removeAllCookieSprites];
     NSSet *newCookies = [self.level shuffle];
     [self.scene addSpritesForCookies:newCookies];
 }
@@ -156,6 +158,7 @@
 }
 
 - (void)showGameOver {
+    [self.scene animateGameOver];
     self.gameOverPanel.hidden = NO;
     self.scene.userInteractionEnabled = NO;
     
