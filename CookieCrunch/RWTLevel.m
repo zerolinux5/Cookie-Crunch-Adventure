@@ -132,6 +132,8 @@
                 }
             }];
         }];
+        self.targetScore = [dictionary[@"targetScore"] unsignedIntegerValue];
+        self.maximumMoves = [dictionary[@"moves"] unsignedIntegerValue];
     }
     return self;
 }

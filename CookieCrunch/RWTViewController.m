@@ -15,6 +15,13 @@
 @property (strong, nonatomic) RWTLevel *level;
 @property (strong, nonatomic) RWTMyScene *scene;
 
+@property (assign, nonatomic) NSUInteger movesLeft;
+@property (assign, nonatomic) NSUInteger score;
+
+@property (weak, nonatomic) IBOutlet UILabel *targetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *movesLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+
 @end
 
 @implementation RWTViewController
@@ -84,6 +91,9 @@
 }
 
 - (void)beginGame {
+    self.movesLeft = self.level.maximumMoves;
+    self.score = 0;
+    [self updateLabels];
     [self shuffle];
 }
 
@@ -114,6 +124,12 @@
 - (void)beginNextTurn {
     [self.level detectPossibleSwaps];
     self.view.userInteractionEnabled = YES;
+}
+
+- (void)updateLabels {
+    self.targetLabel.text = [NSString stringWithFormat:@"%lu", (long)self.level.targetScore];
+    self.movesLabel.text = [NSString stringWithFormat:@"%lu", (long)self.movesLeft];
+    self.scoreLabel.text = [NSString stringWithFormat:@"%lu", (long)self.score];
 }
 
 @end

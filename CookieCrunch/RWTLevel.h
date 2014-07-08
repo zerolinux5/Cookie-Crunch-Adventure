@@ -16,6 +16,10 @@ static const NSInteger NumRows = 9;
 
 @interface RWTLevel : NSObject
 
+@property (assign, nonatomic) NSUInteger targetScore;
+@property (assign, nonatomic) NSUInteger maximumMoves;
+
+
 - (NSSet *)shuffle;
 
 - (RWTCookie *)cookieAtColumn:(NSInteger)column row:(NSInteger)row;
