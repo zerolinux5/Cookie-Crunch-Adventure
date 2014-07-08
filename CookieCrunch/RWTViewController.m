@@ -112,6 +112,7 @@
 }
 
 - (void)beginNextTurn {
+    [self.level detectPossibleSwaps];
     self.view.userInteractionEnabled = YES;
 }
 

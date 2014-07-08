@@ -33,4 +33,6 @@ static const NSInteger NumRows = 9;
 
 - (NSArray *)topUpCookies;
 
+- (void)detectPossibleSwaps;
+
 @end
