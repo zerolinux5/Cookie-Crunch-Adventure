@@ -40,6 +40,7 @@
 		EAAEF724196B1341007DE2F2 /* Mining by Moonlight.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF71E196B1341007DE2F2 /* Mining by Moonlight.mp3 */; };
 		EAAEF725196B1341007DE2F2 /* Scrape.wav in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF71F196B1341007DE2F2 /* Scrape.wav */; };
 		EAAEF728196CA13B007DE2F2 /* RWTChain.m in Sources */ = {isa = PBXBuildFile; fileRef = EAAEF727196CA13B007DE2F2 /* RWTChain.m */; };
+		EAAEF72A196CB454007DE2F2 /* Grid.atlas in Resources */ = {isa = PBXBuildFile; fileRef = EAAEF729196CB454007DE2F2 /* Grid.atlas */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		EAAEF71F196B1341007DE2F2 /* Scrape.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Scrape.wav; sourceTree = "<group>"; };
 		EAAEF726196CA13B007DE2F2 /* RWTChain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWTChain.h; sourceTree = "<group>"; };
 		EAAEF727196CA13B007DE2F2 /* RWTChain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWTChain.m; sourceTree = "<group>"; };
+		EAAEF729196CB454007DE2F2 /* Grid.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Grid.atlas; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		EAAEF6A61969C3F9007DE2F2 /* CookieCrunch */ = {
 			isa = PBXGroup;
 			children = (
+				EAAEF729196CB454007DE2F2 /* Grid.atlas */,
 				EAAEF719196B1341007DE2F2 /* Sounds */,
 				EAAEF708196B05DF007DE2F2 /* Levels */,
 				EAAEF700196B012E007DE2F2 /* Sprites.atlas */,
@@ -318,6 +321,7 @@
 				EAAEF6AB1969C3F9007DE2F2 /* InfoPlist.strings in Resources */,
 				EAAEF721196B1341007DE2F2 /* Drip.wav in Resources */,
 				EAAEF712196B05DF007DE2F2 /* Level_4.json in Resources */,
+				EAAEF72A196CB454007DE2F2 /* Grid.atlas in Resources */,
 				EAAEF722196B1341007DE2F2 /* Error.wav in Resources */,
 				EAAEF710196B05DF007DE2F2 /* Level_2.json in Resources */,
 				EAAEF725196B1341007DE2F2 /* Scrape.wav in Resources */,
