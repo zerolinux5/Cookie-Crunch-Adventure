@@ -305,6 +305,9 @@
     [self removeCookies:horizontalChains];
     [self removeCookies:verticalChains];
     
+    [self calculateScores:horizontalChains];
+    [self calculateScores:verticalChains];
+    
     return [horizontalChains setByAddingObjectsFromSet:verticalChains];
 }
 
@@ -389,6 +392,12 @@
         }
     }
     return columns;
+}
+
+- (void)calculateScores:(NSSet *)chains {
+    for (RWTChain *chain in chains) {
+        chain.score = 60 * ([chain.cookies count] - 2);
+    }
 }
 
 @end

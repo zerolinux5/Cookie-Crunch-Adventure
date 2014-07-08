@@ -19,6 +19,9 @@ typedef NS_ENUM(NSUInteger, ChainType) {
 
 @property (assign, nonatomic) ChainType chainType;
 
+@property (assign, nonatomic) NSUInteger score;
+
 - (void)addCookie:(RWTCookie *)cookie;
+
 
 @end

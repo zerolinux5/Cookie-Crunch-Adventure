@@ -111,6 +111,10 @@
     }
     
     [self.scene animateMatchedCookies:chains completion:^{
+        for (RWTChain *chain in chains) {
+            self.score += chain.score;
+        }
+        [self updateLabels];
         NSArray *columns = [self.level fillHoles];
         [self.scene animateFallingCookies:columns completion:^{
             NSArray *columns = [self.level topUpCookies];
