@@ -314,4 +314,42 @@
     }
 }
 
+- (NSArray *)fillHoles {
+    NSMutableArray *columns = [NSMutableArray array];
+    
+    // 1
+    for (NSInteger column = 0; column < NumColumns; column++) {
+        
+        NSMutableArray *array;
+        for (NSInteger row = 0; row < NumRows; row++) {
+            
+            // 2
+            if (_tiles[column][row] != nil && _cookies[column][row] == nil) {
+                
+                // 3
+                for (NSInteger lookup = row + 1; lookup < NumRows; lookup++) {
+                    RWTCookie *cookie = _cookies[column][lookup];
+                    if (cookie != nil) {
+                        // 4
+                        _cookies[column][lookup] = nil;
+                        _cookies[column][row] = cookie;
+                        cookie.row = row;
+                        
+                        // 5
+                        if (array == nil) {
+                            array = [NSMutableArray array];
+                            [columns addObject:array];
+                        }
+                        [array addObject:cookie];
+                        
+                        // 6
+                        break;
+                    }
+                }
+            }
+        }
+    }
+    return columns;
+}
+
 @end
