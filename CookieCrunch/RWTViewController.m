@@ -22,12 +22,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *movesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
+@property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+
 @end
 
 @implementation RWTViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.gameOverPanel.hidden = YES;
     
     // Configure the view.
     SKView *skView = (SKView *)self.view;
@@ -130,12 +134,43 @@
     [self.level resetComboMultiplier];
     [self.level detectPossibleSwaps];
     self.view.userInteractionEnabled = YES;
+    [self decrementMoves];
 }
 
 - (void)updateLabels {
     self.targetLabel.text = [NSString stringWithFormat:@"%lu", (long)self.level.targetScore];
     self.movesLabel.text = [NSString stringWithFormat:@"%lu", (long)self.movesLeft];
     self.scoreLabel.text = [NSString stringWithFormat:@"%lu", (long)self.score];
+}
+
+- (void)decrementMoves{
+    self.movesLeft--;
+    [self updateLabels];
+    if (self.score >= self.level.targetScore) {
+        self.gameOverPanel.image = [UIImage imageNamed:@"LevelComplete"];
+        [self showGameOver];
+    } else if (self.movesLeft == 0) {
+        self.gameOverPanel.image = [UIImage imageNamed:@"GameOver"];
+        [self showGameOver];
+    }
+}
+
+- (void)showGameOver {
+    self.gameOverPanel.hidden = NO;
+    self.scene.userInteractionEnabled = NO;
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideGameOver)];
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
+}
+
+- (void)hideGameOver {
+    [self.view removeGestureRecognizer:self.tapGestureRecognizer];
+    self.tapGestureRecognizer = nil;
+    
+    self.gameOverPanel.hidden = YES;
+    self.scene.userInteractionEnabled = YES;
+    
+    [self beginGame];
 }
 
 @end

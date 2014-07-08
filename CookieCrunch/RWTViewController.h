@@ -11,4 +11,6 @@
 
 @interface RWTViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIImageView *gameOverPanel;
+
 @end
