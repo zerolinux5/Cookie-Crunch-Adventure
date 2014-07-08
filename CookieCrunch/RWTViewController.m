@@ -9,6 +9,7 @@
 #import "RWTViewController.h"
 #import "RWTMyScene.h"
 #import "RWTLevel.h"
+@import AVFoundation;
 
 @interface RWTViewController ()
 
@@ -25,6 +26,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *shuffleButton;
 
 @property (strong, nonatomic) UITapGestureRecognizer *tapGestureRecognizer;
+
+@property (strong, nonatomic) AVAudioPlayer *backgroundMusic;
 
 @end
 
@@ -67,6 +70,11 @@
     
     // Present the scene.
     [skView presentScene:self.scene];
+    
+    NSURL *url = [[NSBundle mainBundle] URLForResource:@"Mining by Moonlight" withExtension:@"mp3"];
+    self.backgroundMusic = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    self.backgroundMusic.numberOfLoops = -1;
+    [self.backgroundMusic play];
     
     // Let's start the game!
     [self beginGame];
